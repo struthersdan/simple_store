@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @product_count = Product.count
-    @average_cost = Product.sum(:price) / Product.count
+    @average_cost = Product.average(:price)
     @total_stock = Product.sum(:stock_quantity)
   end
 
